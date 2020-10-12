@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Program</title>
+    <link rel="icon" href="../assets/images/common/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/program.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.css">
+    <link rel="stylesheet" href="../assets/css/fullpage.css">
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/fullpage.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/fadeInUp.js"></script>
+    <script>
+        $(document).ready(function () {
+            var swiper = new Swiper('.swiper-container', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            //예약정보를 클릭하면 자연스럽게 이동하기
+            $('.program_list a').on('click', function () {
+                var $tg = $( $(this).attr('href') );
+                $('html, body').stop().animate({scrollTop: $tg.offset().top - 130});
+                return false;
+            });
+
+            //다른 프로그램 보기로 자연스럽게 이동하기
+            $('.cnt2go').on('click', function () {
+                $('html, body').stop().animate({scrollTop: $('#cnt2').offset().top});
+                return false;
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 본문 건너뛰기 -->
+    <div id="skip">
+        <a href="#fullpage">본문 바로가기</a>
+    </div>
+
+    <div id="wrap">
+        <div class="headerwap borderbox">
+        </div>
+        <header id="header">
+            <div>
+                <h1 class="logo f_l p_r" id="logo">
+                    <a href="../index.html"><span class="blind-b">헤이리 세라믹 아트 센터</span></a>
+                </h1>
+            </div>
+            <nav id="gnb" class="font2">
+                <h2 class="blind-b">주메뉴</h2>
+                <ul>
+                    <li>
+                        <a href="project_about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="project_program.html">Program</a>
+                        <ul style="display: none;">
+                            <li><a href="project_program.html">Program is</a></li>
+                            <li><a href="project_reservation.html">Reservation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="project_gallery.html">Gallery</a></li>
+                    <li><a href="project_community.html">Community</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    <!-- program contents -->
+    <div id="fullpage">
+        <div class="wrapProgram">
+            <section class="section" id="cnt1">
+                <div>
+                    <h3>Program</h3>
+                    <div class="info">
+                        <h4>Hey! Ceramic</h4>
+                        <strong>우리는 도자기의 가치를 빚습니다</strong>
+                        <p>흙을 통해 느껴지는 따스하고 부드러운 감촉은 감성을 풍부하고 부드럽게 만들어줍니다.<br>
+                            흙이라는 매개체를 통해 도자기를 만드는 사람 역시 세상에 단 한 명 뿐인<br>
+                            소중한 사람임을 알리고, 흙이 주는 위로와 따뜻함을 간직하고자 합니다.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="section" id="cnt2">
+                <div class="area">
+                    <div class="txt_area">
+                        <h1 class="txt">프로그램 정보</h1>
+                        <p class="subtxt">헤이리 세라믹 아트 센터의 특별한 프로그램 체험입니다.</p>
+                        <ul class="program_list fade clearfix">
+                        <li>
+                            <div><img src="../assets/images/program/cnt2-1.jpg" alt="물레 체험"></div>
+                            <div class="txt">
+                                <strong>1.물레 체험</strong>
+                                <p>돌아가는 물레 위에 흙을 올리고, 손의 <br> 모양과 힘 조절로 다양한 그릇을 만드는 기법입니다.
+                                    손에 닿는 흙의 느낌을 알고, <br> 흙을 잡고 올리고 늘리며 원하는 모양이 <br> 될 때까지 빚습니다.</p>
+                                <a href="#program1" class="more">예약정보</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div><img src="../assets/images/program/cnt2-2.jpg" alt="페인팅 체험"></div>
+                            <div class="txt">
+                                <strong>2.페인팅 체험</strong>
+                                <p>60여 가지 이상의 다양하고 독특한 모양의 <br> 초벌 도자기 중 마음에 드는 도자기를 선택, 직접 그림을 그리는 체험입니다. </p>
+                                <a href="#program2" class="more">예약정보</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div><img src="../assets/images/program/cnt2-3.jpg" alt="어린이 교육체험"></div>
+                            <div class="txt">
+                                <strong>3.어린이 체험교육</strong>
+                                <p>흙(점토)을 적당한 굵기로 밀어 줄 코일을
+                                    만들고, 밑판에 돌돌 말아가며 원하는 모양과 높이가 될 때까지 쌓아준 후, 색을 칠하는 체험입니다. </p>
+                                <a href="#program3" class="more">예약정보</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section clearfix area" id="cnt3">
+                <div class="programInfo fade">
+                    <div class="pgwrap f_r">
+                        <h3 id="program1">1.물레체험</h3>
+                        <div class="description">
+                            <div class="txtwrap clearfix">
+                                <div class="hashtag">#도예체험</div>
+                                <div class="hashtag">#사랑과영혼</div>
+                                <div class="hashtag">#이색데이트</div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="f_l">
+                                    <p class="age item">13세~ (출생년도 기준)</p>
+                                    <p class="day item">월요일~토요일 (09:00~18:00)</p>
+                                    <p class="price item">20,000원</p>
+                                </div>
+                                <div class="f_r">
+                                    <p class="time item">70분</p>
+                                    <p class="call item">031-941-2042</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#cnt2" class="top cnt2go">다른 프로그램 보기</a>
+                        <a href="project_reservation.html" class="top">체험예약</a>
+                    </div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-2.jpg" alt="물레체험사진1"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-3.jpg" alt="물레체험사진2"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-1.jpg" alt="물레체험사진3"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-4.jpg" alt="물레체험사진4"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-5.jpg" alt="물레체험사진5"></div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <p class="subtxt fade"> 온전히 자신에게 집중할 수 있는 시간, 세상 어디에도 없는 감각적인 물레체험을 통해<br>도자기의 섬세한 에너지가 당신 안에 내재된 창조적 영감을 깨울 것입니다.</p>
+            </div>
+
+            <section class="section clearfix area" id="cnt4">
+                <div class="programInfo fade">
+                    <div class="pgwrap f_r">
+                        <h3 id="program2">2.페인팅체험</h3>
+                        <div class="description">
+                            <div class="txtwrap clearfix">
+                                <div class="hashtag">#색칠놀이</div>
+                                <div class="hashtag">#한땀한땀</div>
+                                <div class="hashtag">#피땀눈물</div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="f_l">
+                                    <p class="age item">6세~ (출생년도 기준)</p>
+                                    <p class="day item">월요일~토요일 (09:00~18:00)</p>
+                                    <p class="price item">13,000원</p>
+                                </div>
+                                <div class="f_r">
+                                    <p class="time item">60분</p>
+                                    <p class="call item">031-941-2042</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#cnt2" class="top cnt2go">다른 프로그램 보기</a>
+                        <a href="project_reservation.html" class="top">체험예약</a>
+                    </div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-6.jpg" alt="페인팅체험사진1"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-7.jpg" alt="페인팅체험사진2"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-8.jpg" alt="페인팅체험사진3"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-9.jpg" alt="페인팅체험사진4"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-10.jpg" alt="페인팅체험사진5"></div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <p class="subtxt fade">남다른 특별함에 가치를 더합니다. <br>
+                    각자 개성에 맞는 페인팅을 통해서 다양한 도자기를 만나보실 수 있습니다.</p>
+                </div>
+
+            <div class="section clearfix area" id="cnt5">
+                <div class="programInfo fade">
+                    <div class="pgwrap f_r">
+                        <h3 id="program3">3.어린이교육체험</h3>
+                        <div class="description">
+                            <div class="txtwrap clearfix">
+                                <div class="hashtag">#단체환영</div>
+                                <div class="hashtag">#눈높이강의</div>
+                                <div class="hashtag">#꿀잼보장</div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="f_l">
+                                    <p class="age item">6~13세 (출생년도 기준)</p>
+                                    <p class="day item">월요일~토요일 (09:00~18:00)</p>
+                                    <p class="price item">10,000원</p>
+                                </div>
+                                <div class="f_r">
+                                    <p class="time item">60분</p>
+                                    <p class="call item">031-941-2042</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#cnt2" class="top cnt2go">다른 프로그램 보기</a>
+                        <a href="project_reservation.html" class="top">체험예약</a>
+                    </div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-13.jpg" alt="어린이교육체험사진1"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-12.jpg" alt="어린이교육체험사진2"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-11.jpg" alt="어린이교육체험사진3"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-14.jpg" alt="어린이교육체험사진4"></div>
+                            <div class="swiper-slide"><img src="../assets/images/program/cnt3-15.jpg" alt="어린이교육체험사진5"></div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <p class="subtxt fade">
+                    보고, 듣고, 만지며, 어린이들의 꿈이 자랍니다. <br>
+                    헤이리 세라믹 아트 센터의 체험 시설을 이용하여 도자기 속의 숨은 기초과학원리를 탐색하고 학습합니다.<br>
+                    쉽고 재미있는 체험활동을 통해, 어린이들이 자연스레 과학에 흥미를 가질 수 있도록 유도합니다.</p>
+            </div>
+            <!-- // program contents -->
+
+            <footer id="footer">
+                <div class="inner p_r">
+                    <div class="address" id="address1">
+                        <strong>고객센터<br>
+                            031 941 2042</strong>
+                    </div>
+                    <div class="address" id="address2">
+                        <p class="title">헤이리 세라믹 아트 센터(주)</p>
+                        <br>
+                        <p>파주시 헤이리마을길 93-75 더스텝 1층 대표: 김명석</p>
+                        <p>사업자등록번호:120-10-22587 통신판매업:제2014-경기파주-5773호 TEL.031-941-2042 FAX.0303-3444-2042</p>
+                        <p class="copyright">COPYRIGHT &copy; 2020 HYERI CERAMIC ART CENTER ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+                <ul class="sns">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCOisAE4FhyyJFfWAhrC2LKQ?disable_polymer=true"
+                            target="_blank" title="유튜브 새창열기">
+                            <img src="../assets/images/icon/icon_youtube.png" alt="유튜브 링크">
+                            <span class="blind-b">유튜브</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/heyri_ceramic/" target="_blank" title="인스타그램 새창열기">
+                            <img src="../assets/images/icon/icon_instagram.png" alt="인스타그램 링크">
+                            <span class="blind-b">인스타그램</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/ceramicschoolheyri/" target="_blank" title="페이스북 새창열기">
+                            <img src="../assets/images/icon/icon_facebook.png" alt="페이스북 링크">
+                            <span class="blind-b">페이스북</span>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+    <link rel="icon" href="../assets/images/common/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/reservation.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.css">
+    <link rel="stylesheet" href="../assets/css/fullpage.css">
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/fullpage.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var swiper = new Swiper('.swiper-container', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 본문 건너뛰기 -->
+    <div id="skip">
+        <a href="#cnt6">본문 바로가기</a>
+    </div>
+
+        <div id="wrap">
+            <div class="headerwap borderbox"> 
+        </div>
+        <header id="header">
+            <div>
+                <h1 class="logo f_l p_r" id="logo">
+                    <a href="../index.html"><span class="blind-b">헤이리 세라믹 아트 센터</span></a>
+                </h1>
+            </div>
+            <nav id="gnb" class="font2">
+                <h2 class="blind-b">주메뉴</h2>
+                <ul>
+                    <li>
+                        <a href="../html/project_about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="project_program.html">Program</a>
+                        <ul style="display: none;">
+                            <li><a href="project_program.html">Program is</a></li>
+                            <li><a href="project_reservation.html">Reservation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="project_gallery.html">Gallery</a></li>
+                    <li><a href="project_community.html">Community</a>
+                        <ul style="display: none;">
+                            <li><a href="">Q&amp;A</a></li>
+                            <li><a href="">News</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- program contents -->
+            <section class="section clearfix" id="cnt6">
+                <div class="whiteBox">
+                    <h5>GET IN TOUCH</h5>
+                    <form class="form">
+                        <ul>
+                            <li>
+                                <label for="text">NAME</label>
+                                <input id="text" type="text" name="name" class="name">
+                            </li>
+                            <li>
+                                <label for="call">H.P</label>
+                                <input id="call" type="text" name="H.P" class="call">
+                            </li>
+                            <li>
+                                <label for="mail">E-MAIL</label>
+                                <input id="mail" type="text" name="E-MAIL" class="mail">
+                            </li>
+                            <li>
+                                <label for="message"></label>
+                                <textarea name="message" type="message" id="message" cols="80" rows="10"
+                                    placeholder="메세지를 입력해주세요."></textarea>
+                            </li>
+                        </ul>
+                        <div class="btn">
+                            <input type="submit" value="SUBMIT" class="submit">
+                        </div>
+                    </form>
+                </div>
+            </section>
+    
+            <!-- // program contents -->
+   
+            <footer id="footer">
+                <div class="inner p_r">
+                    <div class="address" id="address1">
+                        <strong>고객센터<br>
+                            031 941 2042</strong>
+                    </div>
+                    <div class="address" id="address2">
+                        <p class="title">헤이리 세라믹 아트 센터(주)</p>
+                        <br>
+                        <p>파주시 헤이리마을길 93-75 더스텝 1층 대표: 김명석</p>
+                        <p>사업자등록번호:120-10-22587 통신판매업:제2014-경기파주-5773호 TEL.031-941-2042 FAX.0303-3444-2042</p>
+                        <p class="copyright">COPYRIGHT &copy; 2020 HYERI CERAMIC ART CENTER ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+                <ul class="sns">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCOisAE4FhyyJFfWAhrC2LKQ?disable_polymer=true"
+                            target="_blank" title="유튜브 새창열기">
+                            <img src="../assets/images/icon/icon_youtube.png" alt="유튜브 링크">
+                            <span class="blind-b">유튜브</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/heyri_ceramic/" target="_blank" title="인스타그램 새창열기">
+                            <img src="../assets/images/icon/icon_instagram.png" alt="인스타그램 링크">
+                            <span class="blind-b">인스타그램</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/ceramicschoolheyri/" target="_blank" title="페이스북 새창열기">
+                            <img src="../assets/images/icon/icon_facebook.png" alt="페이스북 링크">
+                            <span class="blind-b">페이스북</span>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
