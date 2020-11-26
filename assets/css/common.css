@@ -45,7 +45,7 @@ body {font-family: "나눔명조", "Nanum Myeongjo", "맑은 고딕", "Malgun Go
 #skip a:focus {left: 0; top: 0; width: 100%;background: gray; text-align: center;height: 50px;line-height: 50px;font-size: 22px;}
 
 /* header>div, 서브본문, 서브배너, footer 공통 사이즈 선언 */
-#header, #fullpage, #footer {min-width: 1440px; /* max-width: 1910px; *//* margin: 0 auto; */}
+#header, #fullpage, #footer {min-width: 1440px;}
 
 #header {position: fixed; width: 100%;height: 90px;z-index: 900;top: 0; left: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-o-transition: all 0.3s;transition: all 0.3s;}
 #header.active {background: rgba(0,0,0,.8);}
@@ -86,8 +86,11 @@ body {font-family: "나눔명조", "Nanum Myeongjo", "맑은 고딕", "Malgun Go
 #footer #address2 p {margin: 0;letter-spacing: -0.06px; font-size: 13px; line-height: 24px;}
 #footer .copyright {display: block;padding-top: 70px;font-size: 14px;padding-bottom: 85px;}
 #footer .sns {position: absolute; height: 40px; width: 140px;top: 105px; left: 77.7277%;}
-#footer .sns li {position: relative;}
-#footer .sns li:nth-child(1) {left: 0;}
-#footer .sns li:nth-child(2) {left: 50px;}
-#footer .sns li:nth-child(3) {left: 100px;}
-#footer .sns li img{position: absolute; float: left; top: 0;height: 40px; width: 40px;}
+
+.sns li {float: left;}
+.sns li + li {margin-left: 10px;}
+.sns li a{display: block;width: 40px;height: 40px;background:no-repeat center center / cover;}
+.sns li a:hover,.sns li a:focus{background-color:#442a0d; border-radius: 50%;}
+.sns li:nth-child(1) a{background-image: url("../images/common/logo_youtube.png");}
+.sns li:nth-child(2) a{background-image: url("../images/common/logo_instagram.png");}
+.sns li:nth-child(3) a{background-image: url("../images/common/logo_facebook.png");}

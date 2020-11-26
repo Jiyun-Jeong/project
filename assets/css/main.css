@@ -4,7 +4,7 @@ section {width: 100%;height: 900px;}
 
 /* section #cnt1 */
 #cnt1 {position: relative; width: 100%; height: 100%; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
-#cnt1 #mainVideo {/* width: auto; height: auto;  */min-width: 100%; max-width: 100%;}
+#cnt1 #mainVideo {/* width: auto; height: auto;  */min-width: 100%; max-width: 100%; vertical-align: top;}
 #cnt1 .txt {position: relative; top:40px; opacity: 0;}
 #cnt1 a {font-family: "나눔고딕", "Nanum Gothic";position: absolute;bottom: 30%; left: calc(50% - 157.5px);width: 315px; height: 75px; line-height: 75px;text-align: center; border: 1px solid #fff; font-size: 25px;font-weight: 700;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
 #cnt1 a:hover, #cnt1 a:focus {background-color: hsl(32, 68%, 16%); border-color: hsl(32, 68%, 16%);}
@@ -13,7 +13,7 @@ section {width: 100%;height: 900px;}
 #cnt2 {position: relative; font-family: "나눔명조", "Nanum Myeongjo"; background: url("../images/main/index_page2_01.jpg") no-repeat center;background-size: cover;}
 #cnt2 .txt {position: absolute; bottom: 237px; left: 200px; }
 #cnt2 .txt p {font-family:  "나눔명조", "Nanum Myeongjo";font-size: 37px;line-height: 55px;font-weight: 400;}
-#cnt2 .txt p + p {font-weight: 700; font-family: "Noto Sans KR";font-size: 63px;line-height: 65px;color: #000;}
+#cnt2 .txt p + p {font-family:  "나눔명조", "Nanum Myeongjo";font-weight: 700; font-size: 63px;line-height: 54px;color: #000;}
 /* #cnt2 .txt .number { position: absolute; font-size: 120px; color: #000;line-height: 140px;}
 #cnt2 .txt .number + .number {padding-left: 140px;}
 #cnt2 .txt #countpeople {position: absolute; font-size: 80px; color: #000; padding-left: 280px;} */
@@ -82,3 +82,37 @@ h2.txt::after {right: 0;}
 #cnt5 .swiper-container {width: 1400px;height: 350px;}
 #cnt5 .swiper-wrapper{width:450px;height: 350px;}
 #cnt5 .swiper-slide{position: relative;}
+
+#fp-nav ul li .fp-tooltip.fp-right {
+    right: 20px;
+}
+#fp-nav ul li .fp-tooltip {
+    position: absolute;
+    top: 1px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: "Josefin Sans";
+    white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    display: block;
+    width: auto;
+    cursor: pointer;
+    background: hsl(32, 68%, 16%);
+    padding: 5px 7px 3px 7px;
+    border-radius: 9px;
+}
+
+#fp-nav ul li a.active+.fp-tooltip {
+    opacity: 1;
+    width: auto;
+}
+
+#fp-nav ul li, .fp-slidesNav ul li {
+    display: block;
+    width: 14px;
+    height: 21px;
+    margin: 7px;
+    position: relative;
+}

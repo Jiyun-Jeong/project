@@ -1,10 +1,6 @@
 @charset "utf-8";
 
 /* tag reset */
-body{margin: 0;padding: 0;}
-img{vertical-align: top;max-width: 100%;}
-
-body{left:210px;display:inline-block;}
 
 #header .logo a {position: absolute;top: calc(50% + 30px); left:0; background: url("../images/common/logo_CAC_black.png") no-repeat;width: 215px; height: 28px;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-o-transition: all 0.3s;transition: all 0.3s;}
 

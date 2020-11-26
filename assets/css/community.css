@@ -2,7 +2,7 @@
 
 
 /* section #cnt1 */
-#cnt1 {height: 900px; background: url("../images/community/community_page1_01.png") no-repeat center;background-size: cover; z-index: 800;}
+#cnt1 {height: 900px; background: url("../images/community/community_page1_01.png") no-repeat center;background-size: cover; z-index: 800;max-width:100%;height:100vh; }
 #cnt1 .title{bottom: 191px; left: 7.6%; font-size: 100px;}
 #cnt1 .title::before{content:"";position: absolute;width: 100%; height: 3px;  bottom: -1px; left:0px; font-size: 120px; background-color: white;}
 
@@ -40,4 +40,4 @@
 #cnt2 .pagination a.on {color: red;text-decoration: underline;}
 
 /* section #cnt2 버튼 */
-#cnt2 .communityBtn {position: absolute; bottom: -60px; right: 0;display: block; color: #fff;background-color: #442a0d; border-radius: 10px; width: 100px; height: 50px; text-align: center;line-height: 50px; }
+#cnt2 .communityBtn {position: absolute; bottom: 8px; right: 0;display: block; color: #fff;background-color: #442a0d; border-radius: 10px; width: 100px; height: 50px; text-align: center;line-height: 50px; }
