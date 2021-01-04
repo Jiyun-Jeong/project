@@ -1,0 +1,146 @@
+@charset "utf-8";
+@import "_mixin", "_function", "_var";
+
+@import url(https://fonts.googleapis.com/css?family=Gothic+A1:300,500,700);
+@font-face {
+    font-family: Neuropol;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/neuropol.eot");
+    src: url("../fonts/neuropol.eot#iefix") format("embedded-opentype"),
+         url("../fonts/neuropol.woff2") format("woff2"),
+         url("../fonts/neuropol.woff") format("woff"),
+         url("../fonts/neuropol.ttf") format("truetype");
+}
+
+/* 태그 초기화 */
+body, div, ul, h1, h2, h3, h4, h5, h6, p, button, form {margin: 0;padding: 0;}
+ul {list-style: none;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;}
+a:link, a:visited, a:hover, a:active {text-decoration: none; color: inherit;}
+button {border: none; background: none; cursor: pointer;}
+input, button {font-family: inherit;font-size: inherit;color: inherit;line-height: inherit;}
+img {vertical-align: top;border: none;}
+img, video {max-width: 100%;}
+header, nav, section, footer {display: block;}
+
+/* common class */
+.blind-b {width: 1px; height: 1px; overflow: hidden; position: absolute; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%);}
+.clearfix::after {content: "";display: block; clear: both;}
+.p_a {position: absolute;}
+.p_r {position: relative;}
+.f_l {float: left;}
+.f_r {float: right;}
+.max1920 {max-width: 1920px; width: 100%; margin: 0 auto;}
+.max1440 {max-width: 1440px; width: 100%; margin: 0 auto;}
+.max768 {max-width: 768px; width: 100%; margin: 0 auto;}
+.discover_btn {
+    display: inline-block; text-align: center;font-weight: 500;
+    &.darkgrey {background: $darkgrey;}   
+    &.square {
+        @include border-radius(7px);
+        width: 430px;height: 95px;line-height: 95px;
+    } 
+}
+.fade {
+    @include transition(all 0.8s);
+    opacity: 0;
+    //수직은 translateY => 기준 아래는 +, 기준 위는 -
+    &.up {@include transform(translateY(40px));}
+    &.down{@include transform(translateY(-40px));}
+    //수평은 translateX => 기준 오른쪽 +, 기준 왼쪽-
+    &.left {@include transform(translateX(40px));}
+    &.right{@include transform(translateX(-40px));}
+    //커지기
+    &.smaller {@include transform(scale(1.5));}
+    &.bigger {@include transform(scale(0.7));}
+    &.moreBigger {@include transform(scale(0.5));}
+}
+.fade.on {
+    opacity: 1;
+    &.up, &.down {@include transform(translateY(0px));}
+    &.left, &.right{@include transform(translateX(0px));}
+    &.smaller, &.bigger {@include transform(scale(1));}
+}
+
+
+
+
+//body
+body {
+    font-family: "Gothic A1", "맑은 고딕", "Malgun Gothic"; font-size: 16px;font-weight: 300; color: #fff;word-break: keep-all; line-height: 1.3125;
+    * {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+}
+
+//skip
+#skip a {
+    position: absolute; top: 0; left: -9999px; z-index: 1200; 
+    &:focus {left: 0; width: 100%; color: #000; background: $lightblue; text-align: center; font-weight: 500;font-size: 26px;height: 50px;line-height: 50px;}
+}
+
+@media screen and (max-width: 1520px) {
+    .max1440 {max-width: 100%;padding: 0 50px;}
+}
+@media screen and (max-width: 1440px) {
+    .discover_btn {
+        width: vw-calc(213);height: vw-calc(48);
+    }
+}
+
+//고정 버튼
+.fixedBtn {
+    @include transition(opacity 0.3s);
+    position: fixed; bottom: 60px; right: 6.614583333333333vw/* 127px */;width: 129px;height: 100px;
+    
+    //Top 버튼
+    .goUpBtn {
+        position: absolute;/* opacity: 0; */right: 0; top: 0; width: 50px; height: 50px;z-index: 1300;
+    }
+    #btnTop.active {opacity: 1;}
+
+    //채팅상담하기 버튼
+    .chattingBtn {
+        position: absolute; bottom: 0; right: 0; /* opacity: 0; */padding-top: 12px;width: 123px; height: 50px; padding-top: 12px;z-index: 1300;
+    }
+    #chattingbtn.active {opacity: 1;}
+}
+
+
+@media screen and (max-width: 1920px) {
+    .max1920 {max-width: 100%; padding: 0 60px;}
+}
+@media screen and (max-width: 1440px) {
+    .max1440 {max-width: 100%; padding: 0 50px;}
+}
+@media screen and (max-width: 1080px) {
+    .max1440 {max-width: 100%; padding: 0 50px;}
+}
+@media screen and (max-width: 768px) {
+    .max768 {max-width: 100%; padding: 0 20px;}
+
+    .fixedBtn {
+        bottom: 85px; right: 25px;
+        .goUpBtn { width: 44px; height: 44px;}
+        .chattingBtn { padding-top: 2px;width: 112px; height: 44px;}
+    }
+}
+@media screen and (max-width: 414px) {
+    .max1920 {max-width: auto; padding: 0 30px;}
+
+    .fixedBtn {
+        width: 83px;height: 100px;bottom: 117px; right: 40px;
+        .goUpBtn { width: 30px; height: 30px;}
+        .chattingBtn { padding-top: 2px;width: 82px; height: 35px;bottom: 28px;}
+    }
+
+}
+@media screen and (min-width: 360px) {
+    .max1920 {max-width: auto; padding: 0 12px;}
+
+    .fixedBtn {
+        width: 83px;height: 100px;bottom: 50px; right: 17px;
+        .goUpBtn { width: 30px; height: 30px;}
+        .chattingBtn { padding-top: 2px;width: 82px; height: 35px;bottom: 28px;}
+    }
+}
+
