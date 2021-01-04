@@ -1,7 +1,7 @@
 $(document).ready(function (){
 	var $header = $('#header');
 	var $gnb=$("#gnb > ul");
-	$gnb.find(" li ul").hide();	//depth2의 ul 태그는 자동으로 숨기고 시작
+	$gnb.find(" li ul").hide();
 
 	//header에 마우스 진입하면 배경색과 로고 이미지 변경
 	$header.on({
