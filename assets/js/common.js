@@ -1,118 +1,58 @@
-$(document).ready(function (){  
-    var timer = 0;
-    var resizeTimer = 0;
+$(document).ready(function (){
+	var $header = $('#header');
+	var $gnb=$("#gnb > ul");
+	$gnb.find(" li ul").hide();
 
-    var _gnb = $('#gnb')
+	//header에 마우스 진입하면 배경색과 로고 이미지 변경
+	$header.on({
+		'mouseenter focusin': function () {
+			$(this).addClass('active');
+		},
+		'mouseleave focusout': function () {
+			$(this).removeClass('active');
+		}
+	});
 
+	//1)depth1 <a>에 마우스 진입:mouseenter, focus
+	$gnb.find("> li > a").on("mouseenter focus",function  () {
+		//초기화
+		$gnb.find("> li.on").removeClass("on").children("ul").hide();
+		//$header.removeClass('active');
 
-    $(window).on('scroll', function () {
-        clearTimeout(timer);
+		//현재설정
+		$(this).parent().has('ul').closest($header).addClass('active');	//#header 너비의 100% 흰색바 생성을 위한 클래스명 추가
+		$(this).next().show().parent().addClass("on");
+	});
 
-        timer = setTimeout(function () {
-            scrollT = $(this).scrollTop();
-            
-            $('.fade').each(function () {
-                if(scrollT > $(this).offset().top - 600) $(this).addClass('on');
-            });
-        }, 50);
+	//2)nav에서 마우스 떠나기:mouseleave
+	$gnb.on("mouseleave",function  () {
+		$header.removeClass('active');
+		$gnb.find("> li.on").removeClass("on").children("ul").hide();
+	});
+
+	//3)blur: shift탭을 눌러서 gnb에서 포커스가 나가던지, 탭을 눌러 gnb에서 포커스가 나가던지, 
+	$("#gnb a:first , #gnb a:last").on("blur",function  () {
+		setTimeout(function  () {
+			if ( !$("#gnb a").is(":focus") ) {
+				$gnb.mouseleave();
+			}1
+		}, 10);
+	});
+
+	// top 이동
+	$(window).on("scroll",function  () {
+		$(".top_btn").on("click",function  () {
+			$("html, body").stop().animate({scrollTop:0});
+			return false;
+		});
+	});
+	
+	$('#skip a').on('click', function () {
+        var target = $(this).attr('href');
+        console.log(target);
+
+        $(target).attr('tabIndex', -1).focus();
+
+        return false;
+      });
     });
-
-    //사이즈에 변화가 생길때 마다 pc/mobile 버전을 체크하여 body.pc / body.mobile 이라고 함
-    $(window).on('resize', function () {
-        clearTimeout(resizeTimer);
-    
-        resizeTimer = setTimeout(function () {
-            var winWidth = $(window).width();
-            if (winWidth > 1439) {  //pc일 경우
-                $('body').removeClass('mobile').addClass('pc');
-            } else {    //모바일일 경우
-                $('body').removeClass('pc').addClass('mobile');
-            }
-        }, 100);
-    });
-    $(window).trigger('resize');
-
-        //pc
-    //1) #pcGnb 네비
-    var _pcGnb = $('#pcGnb > ul');
-
-    _pcGnb.find('.dep2wrap').hide();
-    _pcGnb.find('> li > a').on('mouseenter focus', function () {
-        _pcGnb.find('>li.on').removeClass('on').children('.dep2wrap').hide();
-        $(this).next().show().parent().addClass('on');
-    });
-    _pcGnb.on('mouseleave', function () {
-        $(this).find('>li.on').removeClass('on').children('.dep2wrap').hide();
-    });
-
-    _pcGnb.find('a:first, a:last').on('blur', function () {
-        setTimeout(function () {
-            if( !$('#pcGnb a').is(':focus') ) _pcGnb.mouseleave();
-        }, 10);
-    });
-
-    //2) 언어 선택 버튼
-    var _lang = $('#header .lang > button');
-
-    _lang.next().hide();
-    _lang.on('mouseenter click', function () {
-        
-        $(this).next().show();
-        
-        $('.lang').on('mouseleave', function () {
-            $(this).children('ul').hide();
-        });
-
-        $('.lang').find('button:first, a:last').on('blur', function () {
-            setTimeout(function () {
-                if( !$('#header .lang a, #header .lang button').is(':focus')) _lang.mouseleave();
-            }, 10);
-        });
-
-    });
-
-    //모바일 메뉴 열기
-    $('#mHeader .menu_open').on('click', function () {
-        var _mGnb = $('#mHeader .mUtil');
-        var _first = _mGnb.find('.first');
-        var _last = _mGnb.find('.last');
-        _mGnb.find('#mGnb ul li ul').hide();
-
-        _mGnb.css({visibility: 'visible'}).stop().animate({right: 0}, 300, function () {
-            _first.focus();
-        });
-
-        _first.on('keydown', function (e) {
-            console.log(e.keycode);
-            if(e.shiftKey && e.keyCode == 9) {
-                e.preventDefault();
-                _last.focus();
-            }
-        });
-
-        _last.on('keydown', function (e) {
-            if(!e.shiftKey && e.keyCode == 9) {
-                e.preventDefault();
-                _first.focus();
-            }
-        });
-
-        _mGnb.find('.mClose').on('click', function () {
-            _mGnb.stop().animate({right: '-100%'}, 300, function () {
-                $(this).css('visibility', 'hidden').find('#mGnb>ul>li.on').removeClass('on').children('ul').stop().slideUp();
-            });
-        });
-
-
-        //depth1 a click
-        _mGnb.find('#mGnb>ul>li>a').on('click', function () {
-            if($(this).next().size() === 0) {
-                location.href=$(this).attr('href');
-            } else {
-                $(this).next().stop().slideToggle().parent().toggleClass('on').siblings().removeClass('on').children('ul').stop().slideUp();
-            }
-            return false;
-        });
-    });
-
-});
